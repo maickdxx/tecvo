@@ -1,10 +1,10 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import heroImg from "@/assets/hero-home.jpg";
-import diffImg1 from "@/assets/diff-technician-1.jpg";
-import diffImg2 from "@/assets/diff-technician-2.jpg";
-import whyImg from "@/assets/why-climathol.jpg";
+import heroImg from "@/assets/work-1.jpg";
+import diffImg1 from "@/assets/work-4.jpg";
+import diffImg2 from "@/assets/work-5.jpg";
+import whyImg from "@/assets/work-2.jpg";
 import {
   Wrench, Thermometer, Wind, Sparkles, Fuel, ShieldCheck,
   Clock, ChevronRight, Settings, MapPin, Award, Phone,
