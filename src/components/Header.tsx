@@ -28,7 +28,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#060B18]/95 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-white/[0.04]"
+          ? "bg-[#091A34]/95 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-white/[0.04]"
           : "bg-transparent"
       }`}
     >
@@ -68,7 +68,7 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#4FC3F7] text-[#060B18] font-bold text-sm hover:brightness-110 hover:scale-[1.02] transition-all duration-200 glow-sm"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#4FC3F7] text-[#091A34] font-bold text-sm hover:brightness-110 hover:scale-[1.02] transition-all duration-200 glow-sm"
           >
             <WhatsAppIcon size={16} />
             Orçamento
@@ -90,7 +90,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#060B18]/98 backdrop-blur-xl border-t border-white/[0.04] overflow-hidden"
+            className="md:hidden bg-[#091A34]/98 backdrop-blur-xl border-t border-white/[0.04] overflow-hidden"
           >
             <div className="px-5 py-5 space-y-1">
               {navItems.map((item, i) => (
@@ -120,7 +120,7 @@ export function Header() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full mt-3 px-5 py-3.5 rounded-lg bg-[#4FC3F7] text-[#060B18] font-bold text-sm"
+                className="flex items-center justify-center gap-2 w-full mt-3 px-5 py-3.5 rounded-lg bg-[#4FC3F7] text-[#091A34] font-bold text-sm"
               >
                 <WhatsAppIcon size={16} />
                 Solicitar Orçamento

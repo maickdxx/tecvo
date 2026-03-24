@@ -16,12 +16,12 @@ const contactInfo = [
 
 export default function Contato() {
   return (
-    <div className="min-h-screen bg-[#060B18]">
+    <div className="min-h-screen bg-[#091A34]">
       <Header />
       <WhatsAppFloat />
 
       {/* Hero */}
-      <section className="pt-16 sm:pt-20 bg-gradient-to-b from-[#0A1628] to-[#060B18] relative overflow-hidden">
+      <section className="pt-16 sm:pt-20 bg-gradient-to-b from-[#0A1628] to-[#091A34] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#4FC3F7]/[0.03] rounded-full blur-[120px]" />
         <div className="relative max-w-3xl mx-auto px-5 sm:px-8 py-24 sm:py-32 text-center">
           <FadeIn>
@@ -43,7 +43,7 @@ export default function Contato() {
       </section>
 
       {/* Contact Info */}
-      <section className="bg-[#060B18] py-16 sm:py-20">
+      <section className="bg-[#091A34] py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div>

@@ -19,12 +19,12 @@ const valores = [
 
 export default function Sobre() {
   return (
-    <div className="min-h-screen bg-[#060B18]">
+    <div className="min-h-screen bg-[#091A34]">
       <Header />
       <WhatsAppFloat />
 
       {/* Hero */}
-      <section className="pt-16 sm:pt-20 bg-gradient-to-b from-[#0A1628] to-[#060B18] relative overflow-hidden">
+      <section className="pt-16 sm:pt-20 bg-gradient-to-b from-[#0A1628] to-[#091A34] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#4FC3F7]/[0.03] rounded-full blur-[120px]" />
         <div className="relative max-w-3xl mx-auto px-5 sm:px-8 py-24 sm:py-32 text-center">
           <FadeIn>
@@ -46,7 +46,7 @@ export default function Sobre() {
       </section>
 
       {/* Quem Somos */}
-      <section className="bg-[#060B18] py-20 sm:py-28">
+      <section className="bg-[#091A34] py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <FadeIn direction="left">
@@ -68,7 +68,7 @@ export default function Sobre() {
             <FadeIn direction="right" delay={0.15}>
               <div className="rounded-2xl overflow-hidden relative group">
                 <img src={whyImg} alt="Técnico Climathol" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#091A34]/50 to-transparent" />
               </div>
             </FadeIn>
           </div>
@@ -101,7 +101,7 @@ export default function Sobre() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-[#060B18] py-20 sm:py-28 overflow-hidden">
+      <section className="relative bg-[#091A34] py-20 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#4FC3F7]/[0.02] to-transparent" />
         <div className="relative max-w-2xl mx-auto px-5 text-center">
           <FadeIn>

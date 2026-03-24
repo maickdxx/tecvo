@@ -60,7 +60,7 @@ const areas = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#060B18]">
+    <div className="min-h-screen bg-[#091A34]">
       <Header />
       <WhatsAppFloat />
 
@@ -68,9 +68,9 @@ export default function Home() {
       <section className="relative pt-16 sm:pt-20 min-h-[90vh] sm:min-h-screen flex items-center overflow-hidden">
         {/* BG image */}
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#060B18] via-[#060B18]/80 to-[#060B18]/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060B18] via-transparent to-transparent" />
+          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#091A34]/90 via-[#091A34]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#091A34]/80 via-transparent to-transparent" />
         </div>
         {/* Decorative glow */}
         <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#4FC3F7]/[0.05] rounded-full blur-[120px]" />
@@ -139,10 +139,10 @@ export default function Home() {
           <FadeIn>
             <div className="text-center mb-14 sm:mb-18">
               <span className="inline-block text-[#4FC3F7] text-xs font-bold uppercase tracking-[0.2em] mb-3">NOSSOS SERVIÇOS</span>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#060B18] tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#091A34] tracking-tight">
                 Soluções Completas em <span className="text-[#4FC3F7]">Climatização</span>
               </h2>
-              <p className="text-[#060B18]/40 mt-4 max-w-lg mx-auto text-sm sm:text-base">
+              <p className="text-[#091A34]/40 mt-4 max-w-lg mx-auto text-sm sm:text-base">
                 Do diagnóstico à execução, serviços técnicos com qualidade e garantia.
               </p>
             </div>
@@ -152,11 +152,11 @@ export default function Home() {
             {solutions.map((s) => (
               <StaggerItem key={s.title}>
                 <div className="group bg-white border border-gray-100 rounded-2xl p-7 hover:shadow-xl hover:shadow-[#4FC3F7]/[0.05] hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-[#060B18] flex items-center justify-center mb-5 group-hover:bg-[#4FC3F7] transition-colors duration-300">
-                    <s.icon size={22} className="text-[#4FC3F7] group-hover:text-[#060B18] transition-colors duration-300" />
+                  <div className="w-12 h-12 rounded-xl bg-[#091A34] flex items-center justify-center mb-5 group-hover:bg-[#4FC3F7] transition-colors duration-300">
+                    <s.icon size={22} className="text-[#4FC3F7] group-hover:text-[#091A34] transition-colors duration-300" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#060B18] mb-2">{s.title}</h3>
-                  <p className="text-[#060B18]/40 text-sm leading-relaxed mb-5">{s.desc}</p>
+                  <h3 className="text-lg font-bold text-[#091A34] mb-2">{s.title}</h3>
+                  <p className="text-[#091A34]/40 text-sm leading-relaxed mb-5">{s.desc}</p>
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ DIFERENCIAIS ══════════ */}
-      <section className="bg-[#060B18] py-20 sm:py-28">
+      <section className="bg-[#091A34] py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <FadeIn>
             <div className="text-center mb-14 sm:mb-18">
@@ -187,13 +187,13 @@ export default function Home() {
             <FadeIn direction="left">
               <div className="rounded-2xl overflow-hidden relative group">
                 <img src={diffImg1} alt="Técnico Climathol" className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#091A34]/70 to-transparent" />
               </div>
             </FadeIn>
             <FadeIn direction="right">
               <div className="rounded-2xl overflow-hidden relative group">
                 <img src={diffImg2} alt="Limpeza profissional" className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#091A34]/70 to-transparent" />
               </div>
             </FadeIn>
           </div>
@@ -286,17 +286,17 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center">
           <FadeIn>
             <span className="inline-block text-[#4FC3F7] text-xs font-bold uppercase tracking-[0.2em] mb-3">ÁREAS ATENDIDAS</span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#060B18] mb-4 tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#091A34] mb-4 tracking-tight">
               Cobertura em <span className="text-[#4FC3F7]">Todo o DF</span>
             </h2>
-            <p className="text-[#060B18]/40 max-w-md mx-auto mb-10 text-sm sm:text-base">
+            <p className="text-[#091A34]/40 max-w-md mx-auto mb-10 text-sm sm:text-base">
               Atendemos com rapidez e eficiência em todas as regiões.
             </p>
           </FadeIn>
           <StaggerContainer className="flex flex-wrap justify-center gap-2.5">
             {areas.map((area) => (
               <StaggerItem key={area}>
-                <div className="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2.5 text-[#060B18] font-medium text-xs sm:text-sm hover:border-[#4FC3F7] hover:text-[#4FC3F7] transition-colors cursor-default">
+                <div className="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2.5 text-[#091A34] font-medium text-xs sm:text-sm hover:border-[#4FC3F7] hover:text-[#4FC3F7] transition-colors cursor-default">
                   <MapPin size={13} className="text-[#4FC3F7]" />
                   {area}
                 </div>
@@ -349,7 +349,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ CTA ══════════ */}
-      <section className="relative bg-[#060B18] py-20 sm:py-28 overflow-hidden">
+      <section className="relative bg-[#091A34] py-20 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#4FC3F7]/[0.03] to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#4FC3F7]/[0.04] rounded-full blur-[150px]" />
         

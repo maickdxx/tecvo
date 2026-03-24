@@ -9,12 +9,12 @@ const WHATSAPP_URL = "https://wa.me/556193021232?text=Olá! Gostaria de informa�
 
 export default function PMOC() {
   return (
-    <div className="min-h-screen bg-[#060B18]">
+    <div className="min-h-screen bg-[#091A34]">
       <Header />
       <WhatsAppFloat />
 
       {/* Hero */}
-      <section className="pt-16 sm:pt-20 bg-gradient-to-b from-[#0A1628] to-[#060B18] min-h-[70vh] flex items-center relative overflow-hidden">
+      <section className="pt-16 sm:pt-20 bg-gradient-to-b from-[#0A1628] to-[#091A34] min-h-[70vh] flex items-center relative overflow-hidden">
         <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-[#4FC3F7]/[0.04] rounded-full blur-[120px]" />
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-20 sm:py-24">
           <FadeIn>
@@ -59,7 +59,7 @@ export default function PMOC() {
       </section>
 
       {/* O que é PMOC */}
-      <section className="bg-[#060B18] py-16 sm:py-20">
+      <section className="bg-[#091A34] py-16 sm:py-20">
         <div className="max-w-3xl mx-auto px-5 sm:px-8">
           <FadeIn>
             <div className="text-center mb-8">
@@ -112,7 +112,7 @@ export default function PMOC() {
       </section>
 
       {/* Quem precisa */}
-      <section className="bg-[#060B18] py-16 sm:py-20">
+      <section className="bg-[#091A34] py-16 sm:py-20">
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
           <FadeIn>
             <div className="text-center mb-10">
@@ -176,7 +176,7 @@ export default function PMOC() {
       </section>
 
       {/* Diferenciais */}
-      <section className="bg-[#060B18] py-16 sm:py-20">
+      <section className="bg-[#091A34] py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <FadeIn>
             <div className="text-center mb-10">
@@ -205,7 +205,7 @@ export default function PMOC() {
       </section>
 
       {/* CTA */}
-      <section className="relative bg-[#060B18] py-16 sm:py-20 overflow-hidden">
+      <section className="relative bg-[#091A34] py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#4FC3F7]/[0.02] to-transparent" />
         <div className="relative max-w-2xl mx-auto px-5 text-center">
           <FadeIn>
