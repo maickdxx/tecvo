@@ -319,22 +319,23 @@ export default function Home() {
             </h2>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <div className="glass rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-8 mb-6">
+            <div className="glass rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#4FC3F7]/10 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-full bg-[#4FC3F7]/10 flex items-center justify-center flex-shrink-0">
                   <ShieldCheck size={20} className="text-[#4FC3F7]" />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10px] text-white/40 uppercase tracking-wider">Responsável Técnico</span>
+                  <span className="text-[10px] text-white/40 uppercase tracking-wider block">Responsável Técnico</span>
                   <p className="font-bold text-white text-sm">Cristóvão Borges</p>
                 </div>
               </div>
+              <div className="w-full h-px bg-white/10 sm:w-px sm:h-10 sm:block" />
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#25D366]/10 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
                   <CheckCircle2 size={20} className="text-[#25D366]" />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10px] text-white/40 uppercase tracking-wider">Registro</span>
+                  <span className="text-[10px] text-white/40 uppercase tracking-wider block">Registro</span>
                   <p className="font-bold text-white text-sm">CFT Ativo</p>
                 </div>
               </div>
