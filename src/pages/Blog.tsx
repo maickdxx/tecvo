@@ -6,16 +6,11 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/Animations";
 import { blogPosts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
 
-import blogLimpeza from "@/assets/blog-limpeza.jpg";
-import blogGelando from "@/assets/blog-gelando.jpg";
-import blogPmoc from "@/assets/blog-pmoc.jpg";
-import blogInstalacao from "@/assets/blog-instalacao.jpg";
-
 const imageMap: Record<string, string> = {
-  "blog-limpeza": blogLimpeza,
-  "blog-gelando": blogGelando,
-  "blog-pmoc": blogPmoc,
-  "blog-instalacao": blogInstalacao,
+  "blog-limpeza": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80",
+  "blog-gelando": "https://images.unsplash.com/photo-1631545806609-65e2de939aba?w=800&q=80",
+  "blog-pmoc": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+  "blog-instalacao": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
 };
 
 export default function Blog() {

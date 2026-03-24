@@ -8,18 +8,13 @@ import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 
-import blogLimpeza from "@/assets/blog-limpeza.jpg";
-import blogGelando from "@/assets/blog-gelando.jpg";
-import blogPmoc from "@/assets/blog-pmoc.jpg";
-import blogInstalacao from "@/assets/blog-instalacao.jpg";
-
 const WHATSAPP_URL = "https://wa.me/556193021232?text=Olá! Gostaria de solicitar um orçamento.";
 
 const imageMap: Record<string, string> = {
-  "blog-limpeza": blogLimpeza,
-  "blog-gelando": blogGelando,
-  "blog-pmoc": blogPmoc,
-  "blog-instalacao": blogInstalacao,
+  "blog-limpeza": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80",
+  "blog-gelando": "https://images.unsplash.com/photo-1631545806609-65e2de939aba?w=800&q=80",
+  "blog-pmoc": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+  "blog-instalacao": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
 };
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
@@ -114,7 +109,7 @@ export default function BlogPost() {
 
           {/* Article body */}
           <FadeIn delay={0.15}>
-            <article className="prose prose-lg max-w-none prose-headings:text-[#091A34] prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-[#091A34] prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:bg-gray-50 prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border-t">
+            <article className="prose prose-lg max-w-none prose-headings:text-[#091A34] prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-strong:text-[#091A34] prose-a:text-[#4FC3F7] prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:bg-gray-50 prose-th:px-4 prose-th:py-2 prose-th:text-[#091A34] prose-td:px-4 prose-td:py-2 prose-td:border-t prose-td:text-gray-700">
               <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>
           </FadeIn>
