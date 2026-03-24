@@ -14,7 +14,7 @@ import {
   CheckCircle2, ArrowRight
 } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5561994175078?text=Olá! Gostaria de solicitar um orçamento.";
+const WHATSAPP_URL = "https://wa.me/556193021232?text=Olá! Gostaria de solicitar um orçamento.";
 
 const serviceTags = [
   { icon: Wrench, label: "Instalação" },
