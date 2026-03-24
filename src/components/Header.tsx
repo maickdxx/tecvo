@@ -10,6 +10,7 @@ const navItems = [
   { label: "INÍCIO", path: "/" },
   { label: "SOBRE", path: "/sobre" },
   { label: "PMOC", path: "/pmoc" },
+  { label: "BLOG", path: "/blog" },
   { label: "CONTATO", path: "/contato" },
 ];
 

@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 import PMOC from "./pages/PMOC";
 import Contato from "./pages/Contato";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -14,6 +16,8 @@ const App = () => (
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/pmoc" element={<PMOC />} />
       <Route path="/contato" element={<Contato />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>
