@@ -68,9 +68,9 @@ export default function Home() {
       <section className="relative pt-16 sm:pt-20 min-h-[90vh] sm:min-h-screen flex items-center overflow-hidden">
         {/* BG image */}
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#091A34] via-[#091A34]/80 to-[#091A34]/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#091A34] via-transparent to-transparent" />
+          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#091A34]/90 via-[#091A34]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#091A34]/80 via-transparent to-transparent" />
         </div>
         {/* Decorative glow */}
         <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#4FC3F7]/[0.05] rounded-full blur-[120px]" />
