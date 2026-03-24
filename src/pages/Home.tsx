@@ -266,7 +266,7 @@ export default function Home() {
                     <span className="text-[10px] text-white/50 uppercase tracking-wider">Clientes</span>
                   </div>
                 </div>
-                <div className="hidden sm:flex absolute bottom-6 left-6 rounded-xl px-5 py-3 items-center gap-3 bg-[#091A34]/90 backdrop-blur-md border border-white/10 shadow-xl">
+                <div className="flex absolute bottom-3 left-3 sm:bottom-6 sm:left-6 rounded-xl px-3 py-2 sm:px-5 sm:py-3 items-center gap-2 sm:gap-3 bg-[#091A34]/90 backdrop-blur-md border border-white/10 shadow-xl">
                   <div className="w-10 h-10 rounded-lg bg-[#25D366]/20 flex items-center justify-center">
                     <Award size={18} className="text-[#25D366]" />
                   </div>
