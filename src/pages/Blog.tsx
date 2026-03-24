@@ -44,7 +44,7 @@ export default function Blog() {
       </section>
 
       {/* Posts Grid */}
-      <section className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-16 sm:py-24" style={{ color: '#374151' }}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.map((post) => (

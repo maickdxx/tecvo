@@ -73,7 +73,7 @@ export default function BlogPost() {
       </section>
 
       {/* Content */}
-      <section className="bg-white py-12 sm:py-16">
+      <section className="bg-white py-12 sm:py-16 text-gray-800" style={{ color: '#374151' }}>
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
           {/* Back link */}
           <FadeIn>
@@ -109,7 +109,7 @@ export default function BlogPost() {
 
           {/* Article body */}
           <FadeIn delay={0.15}>
-            <article className="prose prose-lg max-w-none prose-headings:text-[#091A34] prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-strong:text-[#091A34] prose-a:text-[#4FC3F7] prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:bg-gray-50 prose-th:px-4 prose-th:py-2 prose-th:text-[#091A34] prose-td:px-4 prose-td:py-2 prose-td:border-t prose-td:text-gray-700">
+            <article className="prose prose-lg max-w-none [&]:text-gray-700 prose-headings:text-[#091A34] prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:!text-gray-700 prose-p:leading-relaxed prose-li:!text-gray-700 prose-strong:text-[#091A34] prose-a:text-[#4FC3F7] prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:bg-gray-50 prose-th:px-4 prose-th:py-2 prose-th:text-[#091A34] prose-td:px-4 prose-td:py-2 prose-td:border-t prose-td:!text-gray-700">
               <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>
           </FadeIn>
