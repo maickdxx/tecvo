@@ -5,12 +5,16 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/Animations";
 import { blogPosts } from "@/data/blogPosts";
 import { Calendar, Clock, ArrowRight, BookOpen } from "lucide-react";
+import blogLimpeza from "@/assets/blog-limpeza.jpg";
+import blogGelando from "@/assets/blog-gelando.jpg";
+import blogPmoc from "@/assets/blog-pmoc.jpg";
+import blogInstalacao from "@/assets/blog-instalacao.jpg";
 
 const imageMap: Record<string, string> = {
-  "blog-limpeza": "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80",
-  "blog-gelando": "https://images.unsplash.com/photo-1562176566-e9afd27531d4?w=800&q=80",
-  "blog-pmoc": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80",
-  "blog-instalacao": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80",
+  "blog-limpeza": blogLimpeza,
+  "blog-gelando": blogGelando,
+  "blog-pmoc": blogPmoc,
+  "blog-instalacao": blogInstalacao,
 };
 
 export default function Blog() {
