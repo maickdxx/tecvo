@@ -16,7 +16,6 @@ const imageMap: Record<string, string> = {
   "blog-pmoc": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
   "blog-instalacao": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
 };
-};
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
   return (
