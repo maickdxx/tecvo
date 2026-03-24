@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logoImg from "@/assets/logo-climathol.png";
 
-const WHATSAPP_URL = "https://wa.me/556193021232?text=Olá! Gostaria de solicitar um orçamento.";
+const WHATSAPP_URL = "https://wa.me/5561994175078?text=Olá! Gostaria de solicitar um orçamento.";
 
 const navItems = [
   { label: "INÍCIO", path: "/" },
@@ -14,17 +15,30 @@ const navItems = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#091A34]/95 backdrop-blur-lg border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#060B18]/95 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-white/[0.04]"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex-shrink-0">
             <img
               src={logoImg}
               alt="Climathol Ar Condicionado"
-              className="h-9 sm:h-12 w-auto object-contain"
+              className="h-9 sm:h-11 w-auto object-contain"
             />
           </Link>
 
@@ -33,13 +47,19 @@ export function Header() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-semibold tracking-wide transition-colors duration-200 ${
+                className={`relative text-[13px] font-semibold tracking-wider transition-colors duration-200 ${
                   pathname === item.path
                     ? "text-[#4FC3F7]"
-                    : "text-white/70 hover:text-white"
+                    : "text-white/60 hover:text-white"
                 }`}
               >
                 {item.label}
+                {pathname === item.path && (
+                  <motion.div
+                    layoutId="nav-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#4FC3F7] rounded-full"
+                  />
+                )}
               </Link>
             ))}
           </nav>
@@ -48,7 +68,7 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#4FC3F7] text-white font-bold text-sm hover:brightness-110 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#4FC3F7] text-[#060B18] font-bold text-sm hover:brightness-110 hover:scale-[1.02] transition-all duration-200 glow-sm"
           >
             <WhatsAppIcon size={16} />
             Orçamento
@@ -56,7 +76,7 @@ export function Header() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white/80 hover:text-white p-1.5 transition-colors"
+            className="md:hidden text-white/70 hover:text-white p-1.5 transition-colors"
             aria-label="Menu"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
@@ -64,33 +84,51 @@ export function Header() {
         </div>
       </div>
 
-      {open && (
-        <div className="md:hidden bg-[#091A34]/98 backdrop-blur-lg border-t border-white/[0.06] animate-fade-in">
-          <div className="px-5 py-5 space-y-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setOpen(false)}
-                className={`block text-base font-semibold py-2 transition-colors ${
-                  pathname === item.path ? "text-[#4FC3F7]" : "text-white/80 hover:text-white"
-                }`}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#060B18]/98 backdrop-blur-xl border-t border-white/[0.04] overflow-hidden"
+          >
+            <div className="px-5 py-5 space-y-1">
+              {navItems.map((item, i) => (
+                <motion.div
+                  key={item.path}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className={`block text-base font-semibold py-3 px-3 rounded-lg transition-colors ${
+                      pathname === item.path
+                        ? "text-[#4FC3F7] bg-[#4FC3F7]/10"
+                        : "text-white/70 hover:text-white hover:bg-white/[0.04]"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.a
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full mt-3 px-5 py-3.5 rounded-lg bg-[#4FC3F7] text-[#060B18] font-bold text-sm"
               >
-                {item.label}
-              </Link>
-            ))}
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full mt-3 px-5 py-3 rounded-lg bg-[#4FC3F7] text-white font-bold text-sm"
-            >
-              <WhatsAppIcon size={16} />
-              Solicitar Orçamento
-            </a>
-          </div>
-        </div>
-      )}
+                <WhatsAppIcon size={16} />
+                Solicitar Orçamento
+              </motion.a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
