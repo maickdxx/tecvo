@@ -1,12 +1,14 @@
+import type { ComponentPropsWithoutRef } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { FadeIn } from "@/components/Animations";
 import { blogPosts } from "@/data/blogPosts";
-import { Calendar, Clock, ArrowLeft, Share2 } from "lucide-react";
+import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import blogLimpeza from "@/assets/blog-limpeza.jpg";
 import blogGelando from "@/assets/blog-gelando.jpg";
 import blogPmoc from "@/assets/blog-pmoc.jpg";
@@ -19,6 +21,56 @@ const imageMap: Record<string, string> = {
   "blog-gelando": blogGelando,
   "blog-pmoc": blogPmoc,
   "blog-instalacao": blogInstalacao,
+};
+
+const markdownComponents = {
+  h2: (props: ComponentPropsWithoutRef<"h2">) => (
+    <h2
+      className="mt-10 mb-5 text-xl font-extrabold leading-tight text-[#091A34] sm:text-2xl"
+      {...props}
+    />
+  ),
+  h3: (props: ComponentPropsWithoutRef<"h3">) => (
+    <h3
+      className="mt-8 mb-4 text-lg font-bold leading-tight text-[#091A34] sm:text-xl"
+      {...props}
+    />
+  ),
+  p: (props: ComponentPropsWithoutRef<"p">) => (
+    <p
+      className="mb-5 text-base leading-8 text-gray-700 [word-spacing:0.04em]"
+      {...props}
+    />
+  ),
+  ul: (props: ComponentPropsWithoutRef<"ul">) => (
+    <ul className="my-5 list-disc space-y-2 pl-5 text-gray-700" {...props} />
+  ),
+  ol: (props: ComponentPropsWithoutRef<"ol">) => (
+    <ol className="my-5 list-decimal space-y-2 pl-5 text-gray-700" {...props} />
+  ),
+  li: (props: ComponentPropsWithoutRef<"li">) => (
+    <li className="pl-1 leading-8 marker:text-primary" {...props} />
+  ),
+  strong: (props: ComponentPropsWithoutRef<"strong">) => (
+    <strong className="font-extrabold text-[#091A34]" {...props} />
+  ),
+  a: (props: ComponentPropsWithoutRef<"a">) => (
+    <a className="font-semibold text-primary underline-offset-4 hover:underline" {...props} />
+  ),
+  table: (props: ComponentPropsWithoutRef<"table">) => (
+    <div className="my-8 overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <table className="min-w-full border-collapse text-left text-sm leading-6" {...props} />
+    </div>
+  ),
+  th: (props: ComponentPropsWithoutRef<"th">) => (
+    <th
+      className="border-b border-gray-200 bg-gray-50 px-4 py-3 font-bold text-[#091A34]"
+      {...props}
+    />
+  ),
+  td: (props: ComponentPropsWithoutRef<"td">) => (
+    <td className="border-b border-gray-100 px-4 py-3 align-top text-gray-700" {...props} />
+  ),
 };
 
 function WhatsAppIcon({ size = 20 }: { size?: number }) {
@@ -42,23 +94,22 @@ export default function BlogPost() {
       <Header />
       <WhatsAppFloat />
 
-      {/* Hero image */}
-      <section className="pt-16 sm:pt-20 relative">
-        <div className="relative h-[300px] sm:h-[400px] overflow-hidden">
+      <section className="relative pt-16 sm:pt-20">
+        <div className="relative h-[300px] overflow-hidden sm:h-[400px]">
           <img
             src={imageMap[post.image]}
             alt={post.title}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             width={1024}
             height={640}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#091A34] via-[#091A34]/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-12">
-            <div className="max-w-4xl mx-auto">
-              <span className="inline-block bg-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+            <div className="mx-auto max-w-4xl">
+              <span className="mb-4 inline-block rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                 {post.category}
               </span>
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+              <h1 className="mb-4 text-2xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
                 {post.title}
               </h1>
               <div className="flex items-center gap-4 text-sm text-white/60">
@@ -76,32 +127,31 @@ export default function BlogPost() {
         </div>
       </section>
 
-      {/* Content */}
-      <section className="bg-white py-12 sm:py-16 text-gray-800" style={{ color: '#374151' }}>
-        <div className="max-w-4xl mx-auto px-5 sm:px-8">
-          {/* Back link */}
+      <section className="bg-white py-12 text-gray-800 sm:py-16" style={{ color: "#374151" }}>
+        <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <FadeIn>
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors mb-8"
+              className="mb-8 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary"
             >
               <ArrowLeft size={14} />
               Voltar ao Blog
             </Link>
           </FadeIn>
 
-          {/* Inline WhatsApp CTA */}
           <FadeIn delay={0.1}>
-            <div className="bg-[#091A34] rounded-2xl p-6 sm:p-8 mb-10 flex flex-col sm:flex-row items-center gap-4">
+            <div className="mb-10 flex flex-col items-center gap-4 rounded-2xl bg-[#091A34] p-6 sm:flex-row sm:p-8">
               <div className="flex-1">
-                <p className="text-white font-bold text-lg mb-1">Precisa de ajuda profissional?</p>
-                <p className="text-white/50 text-sm">Fale com a Climathol pelo WhatsApp e receba atendimento rápido.</p>
+                <p className="mb-1 text-lg font-bold text-white">Precisa de ajuda profissional?</p>
+                <p className="text-sm text-white/70">
+                  Fale com a Climathol pelo WhatsApp e receba atendimento rápido.
+                </p>
               </div>
               <motion.a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-sm whitespace-nowrap shadow-lg hover:brightness-110 transition-all"
+                className="flex items-center gap-2 whitespace-nowrap rounded-xl bg-[#25D366] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:brightness-110"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -111,44 +161,27 @@ export default function BlogPost() {
             </div>
           </FadeIn>
 
-          {/* Article body */}
           <FadeIn delay={0.15}>
-            <article
-              className="prose prose-base sm:prose-lg max-w-none
-                [&]:text-gray-700
-                prose-headings:text-[#091A34] prose-headings:font-extrabold
-                prose-h2:text-xl sm:prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-5
-                prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:!text-gray-700 prose-p:leading-relaxed prose-p:mb-5
-                prose-li:!text-gray-700 prose-li:mb-2 prose-li:leading-relaxed
-                prose-ul:my-5 prose-ol:my-5
-                prose-strong:text-[#091A34]
-                prose-a:text-[#4FC3F7] prose-a:no-underline hover:prose-a:underline
-                prose-table:text-sm prose-table:my-6 prose-table:w-full
-                prose-th:bg-gray-50 prose-th:px-4 prose-th:py-3 prose-th:text-[#091A34]
-                prose-td:px-4 prose-td:py-3 prose-td:border-t prose-td:!text-gray-700
-                [&_h2+h3]:mt-6 [&_p+ul]:mt-2 [&_p+ol]:mt-2
-              "
-              style={{ wordSpacing: '0.05em', lineHeight: '1.8' }}
-            >
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+            <article className="max-w-none">
+              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                {post.content}
+              </ReactMarkdown>
             </article>
           </FadeIn>
 
-          {/* CTA final */}
           <FadeIn delay={0.2}>
-            <div className="mt-14 bg-gradient-to-br from-[#091A34] to-[#0c2a4a] rounded-2xl p-8 sm:p-10 text-center">
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-3">
+            <div className="mt-14 rounded-2xl bg-gradient-to-br from-[#091A34] to-[#0c2a4a] p-8 text-center sm:p-10">
+              <h3 className="mb-3 text-2xl font-black text-white sm:text-3xl">
                 Precisa de ajuda com seu ar-condicionado?
               </h3>
-              <p className="text-white/50 mb-6 max-w-md mx-auto text-sm sm:text-base">
+              <p className="mx-auto mb-6 max-w-md text-sm text-white/70 sm:text-base">
                 Fale com a Climathol agora e receba um atendimento consultivo, rápido e transparente.
               </p>
               <motion.a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base shadow-xl hover:brightness-110 transition-all"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-8 py-4 text-base font-bold text-white shadow-xl transition-all hover:brightness-110"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -158,29 +191,28 @@ export default function BlogPost() {
             </div>
           </FadeIn>
 
-          {/* Related posts */}
           {otherPosts.length > 0 && (
             <FadeIn delay={0.25}>
               <div className="mt-16">
-                <h3 className="text-xl font-bold text-[#091A34] mb-6">Leia também</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <h3 className="mb-6 text-xl font-bold text-[#091A34]">Leia também</h3>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   {otherPosts.map((p) => (
                     <Link
                       key={p.slug}
                       to={`/blog/${p.slug}`}
-                      className="group block rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300"
+                      className="group block overflow-hidden rounded-2xl border border-gray-100 transition-all duration-300 hover:shadow-lg"
                     >
                       <img
                         src={imageMap[p.image]}
                         alt={p.title}
-                        className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                         width={1024}
                         height={640}
                       />
                       <div className="p-5">
-                        <span className="text-xs text-primary font-semibold">{p.category}</span>
-                        <h4 className="text-base font-bold text-[#091A34] mt-1 group-hover:text-primary transition-colors leading-snug">
+                        <span className="text-xs font-semibold text-primary">{p.category}</span>
+                        <h4 className="mt-1 text-base font-bold leading-snug text-[#091A34] transition-colors group-hover:text-primary">
                           {p.title}
                         </h4>
                       </div>
