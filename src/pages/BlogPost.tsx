@@ -113,7 +113,24 @@ export default function BlogPost() {
 
           {/* Article body */}
           <FadeIn delay={0.15}>
-            <article className="prose prose-lg max-w-none [&]:text-gray-700 prose-headings:text-[#091A34] prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:!text-gray-700 prose-p:leading-relaxed prose-li:!text-gray-700 prose-strong:text-[#091A34] prose-a:text-[#4FC3F7] prose-a:no-underline hover:prose-a:underline prose-table:text-sm prose-th:bg-gray-50 prose-th:px-4 prose-th:py-2 prose-th:text-[#091A34] prose-td:px-4 prose-td:py-2 prose-td:border-t prose-td:!text-gray-700">
+            <article
+              className="prose prose-base sm:prose-lg max-w-none
+                [&]:text-gray-700
+                prose-headings:text-[#091A34] prose-headings:font-extrabold
+                prose-h2:text-xl sm:prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-5
+                prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
+                prose-p:!text-gray-700 prose-p:leading-relaxed prose-p:mb-5
+                prose-li:!text-gray-700 prose-li:mb-2 prose-li:leading-relaxed
+                prose-ul:my-5 prose-ol:my-5
+                prose-strong:text-[#091A34]
+                prose-a:text-[#4FC3F7] prose-a:no-underline hover:prose-a:underline
+                prose-table:text-sm prose-table:my-6 prose-table:w-full
+                prose-th:bg-gray-50 prose-th:px-4 prose-th:py-3 prose-th:text-[#091A34]
+                prose-td:px-4 prose-td:py-3 prose-td:border-t prose-td:!text-gray-700
+                [&_h2+h3]:mt-6 [&_p+ul]:mt-2 [&_p+ol]:mt-2
+              "
+              style={{ wordSpacing: '0.05em', lineHeight: '1.8' }}
+            >
               <ReactMarkdown>{post.content}</ReactMarkdown>
             </article>
           </FadeIn>
