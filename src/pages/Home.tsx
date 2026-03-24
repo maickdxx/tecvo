@@ -257,7 +257,7 @@ export default function Home() {
                 <div className="rounded-2xl overflow-hidden">
                   <img src={whyImg} alt="Técnico Climathol" className="w-full h-auto object-cover" loading="lazy" />
                 </div>
-                <div className="hidden sm:flex absolute top-6 right-6 rounded-xl px-5 py-3 items-center gap-3 bg-[#091A34]/90 backdrop-blur-md border border-white/10 shadow-xl">
+                <div className="flex absolute top-3 right-3 sm:top-6 sm:right-6 rounded-xl px-3 py-2 sm:px-5 sm:py-3 items-center gap-2 sm:gap-3 bg-[#091A34]/90 backdrop-blur-md border border-white/10 shadow-xl">
                   <div className="w-10 h-10 rounded-lg bg-[#4FC3F7]/20 flex items-center justify-center">
                     <Users size={18} className="text-[#4FC3F7]" />
                   </div>
