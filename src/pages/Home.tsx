@@ -257,22 +257,22 @@ export default function Home() {
                 <div className="rounded-2xl overflow-hidden">
                   <img src={whyImg} alt="Técnico Climathol" className="w-full h-auto object-cover" loading="lazy" />
                 </div>
-                <div className="hidden sm:flex absolute top-6 right-6 glass rounded-xl px-5 py-3 items-center gap-3">
+                <div className="hidden sm:flex absolute top-6 right-6 rounded-xl px-5 py-3 items-center gap-3 bg-[#091A34]/90 backdrop-blur-md border border-white/10 shadow-xl">
                   <div className="w-10 h-10 rounded-lg bg-[#4FC3F7]/20 flex items-center justify-center">
                     <Users size={18} className="text-[#4FC3F7]" />
                   </div>
                   <div>
                     <span className="text-xl font-extrabold text-white block">1000+</span>
-                    <span className="text-[10px] text-white/40 uppercase tracking-wider">Clientes</span>
+                    <span className="text-[10px] text-white/50 uppercase tracking-wider">Clientes</span>
                   </div>
                 </div>
-                <div className="hidden sm:flex absolute bottom-6 left-6 glass rounded-xl px-5 py-3 items-center gap-3">
+                <div className="hidden sm:flex absolute bottom-6 left-6 rounded-xl px-5 py-3 items-center gap-3 bg-[#091A34]/90 backdrop-blur-md border border-white/10 shadow-xl">
                   <div className="w-10 h-10 rounded-lg bg-[#25D366]/20 flex items-center justify-center">
                     <Award size={18} className="text-[#25D366]" />
                   </div>
                   <div>
                     <span className="text-xl font-extrabold text-white block">+10</span>
-                    <span className="text-[10px] text-white/40 uppercase tracking-wider">Anos</span>
+                    <span className="text-[10px] text-white/50 uppercase tracking-wider">Anos</span>
                   </div>
                 </div>
               </div>
