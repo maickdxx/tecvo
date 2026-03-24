@@ -4,18 +4,18 @@ import { Phone, Mail, MapPin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-[#040B18] text-white/60">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-14">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-12">
           <div>
-            <h3 className="text-xl font-extrabold text-white mb-5 tracking-tight">Climathol</h3>
+            <h3 className="text-lg font-extrabold text-white mb-4 tracking-tight">Climathol</h3>
             <p className="text-sm leading-relaxed">
-              Especialistas em climatização no Distrito Federal. Instalação, manutenção, PMOC e soluções completas em ar condicionado.
+              Especialistas em climatização no DF. Instalação, manutenção, PMOC e soluções completas em ar condicionado.
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-5">Navegação</h4>
-            <ul className="space-y-3.5 text-sm">
+            <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-4">Navegação</h4>
+            <ul className="space-y-2.5 text-sm">
               <li><Link to="/" className="hover:text-white transition-colors">Início</Link></li>
               <li><Link to="/sobre" className="hover:text-white transition-colors">Sobre</Link></li>
               <li><Link to="/pmoc" className="hover:text-white transition-colors">PMOC</Link></li>
@@ -24,25 +24,25 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-[0.2em] mb-5">Contato</h4>
-            <ul className="space-y-3.5 text-sm">
-              <li className="flex items-center gap-2.5">
-                <Phone size={15} className="text-[#4FC3F7]" />
+            <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-4">Contato</h4>
+            <ul className="space-y-2.5 text-sm">
+              <li className="flex items-center gap-2">
+                <Phone size={14} className="text-[#4FC3F7]" />
                 <a href="tel:+556193021232" className="hover:text-white transition-colors">(61) 93021-232</a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Mail size={15} className="text-[#4FC3F7]" />
+              <li className="flex items-center gap-2">
+                <Mail size={14} className="text-[#4FC3F7]" />
                 <span>contato@climathol.com.br</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin size={15} className="text-[#4FC3F7] mt-0.5" />
+              <li className="flex items-start gap-2">
+                <MapPin size={14} className="text-[#4FC3F7] mt-0.5" />
                 <span>Brasília - DF e região</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/[0.06] text-center text-xs text-white/30">
+        <div className="mt-10 pt-6 border-t border-white/[0.06] text-center text-xs text-white/30">
           © {new Date().getFullYear()} Climathol - Ar Condicionado. Todos os direitos reservados.
         </div>
       </div>

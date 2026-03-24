@@ -18,17 +18,17 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#091A34]/95 backdrop-blur-lg border-b border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex-shrink-0">
             <img
               src={logoImg}
               alt="Climathol Ar Condicionado"
-              className="h-12 sm:h-14 w-auto object-contain"
+              className="h-9 sm:h-12 w-auto object-contain"
             />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -48,25 +48,25 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#4FC3F7] text-white font-bold text-sm hover:scale-[1.03] hover:brightness-110 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#4FC3F7] text-white font-bold text-sm hover:brightness-110 transition-all duration-200"
           >
-            <WhatsAppIcon />
+            <WhatsAppIcon size={16} />
             Orçamento
           </a>
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white/80 hover:text-white p-2 transition-colors"
+            className="md:hidden text-white/80 hover:text-white p-1.5 transition-colors"
             aria-label="Menu"
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {open && (
         <div className="md:hidden bg-[#091A34]/98 backdrop-blur-lg border-t border-white/[0.06] animate-fade-in">
-          <div className="px-6 py-6 space-y-4">
+          <div className="px-5 py-5 space-y-3">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -83,9 +83,9 @@ export function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full mt-4 px-6 py-3 rounded-xl bg-[#4FC3F7] text-white font-bold text-sm"
+              className="flex items-center justify-center gap-2 w-full mt-3 px-5 py-3 rounded-lg bg-[#4FC3F7] text-white font-bold text-sm"
             >
-              <WhatsAppIcon />
+              <WhatsAppIcon size={16} />
               Solicitar Orçamento
             </a>
           </div>
