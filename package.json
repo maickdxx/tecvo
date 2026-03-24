@@ -13,7 +13,6 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.83.0",
     "@vitejs/plugin-react": "4.3.4",
     "@xyflow/react": "^12.10.1",
     "class-variance-authority": "^0.7.1",
