@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import techImg from "@/assets/about-technician.jpg";
+import whyImg from "@/assets/work-2.jpg";
 import { ShieldCheck, Users, Award, Target, Clock, Wrench } from "lucide-react";
 
 const WHATSAPP_URL = "https://wa.me/5561993676477?text=Olá! Gostaria de saber mais sobre a Climathol.";
@@ -14,48 +14,48 @@ export default function Sobre() {
 
       {/* Hero */}
       <section className="pt-20 bg-gradient-to-b from-[#091A34] to-[#0D2447]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <span className="inline-block text-[#4FC3F7] text-sm font-semibold uppercase tracking-wider border border-[#4FC3F7]/30 rounded-full px-4 py-1.5 mb-6">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-28 sm:py-36 text-center">
+          <span className="inline-block text-[#4FC3F7] text-xs font-bold uppercase tracking-[0.2em] border border-[#4FC3F7]/30 rounded-full px-5 py-2 mb-8">
             CONHEÇA A CLIMATHOL
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-7 tracking-tight">
             Sobre a <span className="text-[#4FC3F7]">Climathol</span>
           </h1>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             Somos especialistas em climatização no Distrito Federal. Nossa missão é entregar conforto térmico, qualidade do ar e eficiência energética com excelência técnica.
           </p>
         </div>
       </section>
 
       {/* Quem Somos */}
-      <section className="bg-[#060F1F] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-[#060F1F] py-24 sm:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Quem Somos</h2>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-8 tracking-tight">Quem Somos</h2>
+              <p className="text-white/60 leading-relaxed mb-5 text-[15px]">
                 A <strong className="text-white">Climathol - Ar Condicionado</strong> atua no Distrito Federal com foco em soluções completas de climatização para residências, empresas, clínicas, consultórios e ambientes comerciais.
               </p>
-              <p className="text-white/70 leading-relaxed mb-4">
+              <p className="text-white/60 leading-relaxed mb-5 text-[15px]">
                 Contamos com uma equipe técnica qualificada e comprometida com a qualidade em cada etapa do serviço — da avaliação inicial até o acompanhamento pós-serviço.
               </p>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/60 leading-relaxed text-[15px]">
                 Nosso objetivo é oferecer tranquilidade e conforto para nossos clientes, garantindo que seus sistemas de climatização funcionem com máxima eficiência e segurança.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={techImg} alt="Técnico Climathol" className="w-full h-auto object-cover" loading="lazy" width={1280} height={960} />
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img src={whyImg} alt="Técnico Climathol" className="w-full h-auto object-cover" loading="lazy" width={1280} height={960} />
             </div>
           </div>
         </div>
       </section>
 
       {/* Valores */}
-      <section className="bg-[#091A34] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block text-[#4FC3F7] text-sm font-semibold uppercase tracking-wider mb-3">Nossos Valores</span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+      <section className="bg-[#091A34] py-24 sm:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-20">
+            <span className="inline-block text-[#4FC3F7] text-xs font-bold uppercase tracking-[0.2em] mb-4">Nossos Valores</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
               O que nos <span className="text-[#4FC3F7]">move</span>
             </h2>
           </div>
@@ -68,12 +68,12 @@ export default function Sobre() {
               { icon: Clock, title: "Agilidade", desc: "Atendimento rápido e eficiente, com respeito ao tempo e às necessidades do cliente." },
               { icon: Wrench, title: "Qualidade", desc: "Utilização de equipamentos e técnicas de alto padrão em todos os serviços." },
             ].map((v) => (
-              <div key={v.title} className="bg-white/5 border border-white/10 rounded-2xl p-8">
-                <div className="w-12 h-12 rounded-xl bg-[#4FC3F7]/15 flex items-center justify-center mb-5">
+              <div key={v.title} className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-9 hover:border-[#4FC3F7]/30 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#4FC3F7]/10 flex items-center justify-center mb-6">
                   <v.icon size={22} className="text-[#4FC3F7]" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{v.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{v.desc}</p>
+                <h3 className="text-lg font-bold text-white mb-3">{v.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -81,19 +81,19 @@ export default function Sobre() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-b from-[#091A34] to-[#0D2447] py-20">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
+      <section className="bg-gradient-to-b from-[#091A34] to-[#0D2447] py-24 sm:py-32">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-7 tracking-tight">
             Conheça nosso trabalho de <span className="text-[#4FC3F7]">perto</span>
           </h2>
-          <p className="text-white/70 text-lg mb-10">
+          <p className="text-white/50 text-lg mb-12">
             Entre em contato e veja como podemos ajudar com a climatização do seu ambiente.
           </p>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg shadow-xl shadow-[#25D366]/30 hover:scale-[1.03] hover:brightness-110 transition-all duration-200"
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg shadow-xl shadow-[#25D366]/25 hover:scale-[1.03] hover:brightness-110 transition-all duration-200"
           >
             <WhatsAppIcon />
             Falar com a Climathol

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 224 25% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 25% 12%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 25% 12%;
+    --background: 216 50% 5%;
+    --foreground: 0 0% 100%;
+    --card: 216 50% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 216 50% 8%;
+    --popover-foreground: 0 0% 100%;
     --primary: 199 92% 64%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 224 12% 95%;
-    --secondary-foreground: 224 20% 20%;
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 46%;
-    --accent: 224 12% 95%;
-    --accent-foreground: 224 25% 12%;
+    --primary-foreground: 216 50% 5%;
+    --secondary: 216 30% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 216 30% 12%;
+    --muted-foreground: 216 10% 60%;
+    --accent: 216 30% 15%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 216 20% 18%;
+    --input: 216 20% 18%;
     --ring: 199 92% 64%;
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   * {
@@ -34,7 +34,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   }
 
   html {
@@ -44,10 +44,10 @@
 
 @layer utilities {
   @keyframes fade-in {
-    from { opacity: 0; transform: translateY(6px); }
+    from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
   }
   .animate-fade-in {
-    animation: fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }

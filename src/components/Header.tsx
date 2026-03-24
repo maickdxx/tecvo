@@ -17,10 +17,9 @@ export function Header() {
   const { pathname } = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#091A34] to-[#0D2447] shadow-lg shadow-black/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#091A34]/95 backdrop-blur-lg border-b border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
               src={logoImg}
@@ -29,16 +28,15 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={`text-sm font-semibold tracking-wide transition-colors duration-200 ${
                   pathname === item.path
-                    ? "text-[#4FC3F7] border-b-2 border-[#4FC3F7] pb-1"
-                    : "text-white/80 hover:text-white"
+                    ? "text-[#4FC3F7]"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -46,18 +44,16 @@ export function Header() {
             ))}
           </nav>
 
-          {/* CTA Button */}
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#4FC3F7] text-white font-bold text-sm shadow-lg shadow-[#4FC3F7]/25 hover:scale-[1.03] hover:brightness-110 transition-all duration-200"
+            className="hidden md:inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#4FC3F7] text-white font-bold text-sm hover:scale-[1.03] hover:brightness-110 transition-all duration-200"
           >
             <WhatsAppIcon />
             Orçamento
           </a>
 
-          {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-white/80 hover:text-white p-2 transition-colors"
@@ -68,9 +64,8 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-[#091A34]/98 backdrop-blur-lg border-t border-white/10 animate-fade-in">
+        <div className="md:hidden bg-[#091A34]/98 backdrop-blur-lg border-t border-white/[0.06] animate-fade-in">
           <div className="px-6 py-6 space-y-4">
             {navItems.map((item) => (
               <Link
@@ -88,7 +83,7 @@ export function Header() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full mt-4 px-6 py-3 rounded-xl bg-[#4FC3F7] text-white font-bold text-sm shadow-lg"
+              className="flex items-center justify-center gap-2 w-full mt-4 px-6 py-3 rounded-xl bg-[#4FC3F7] text-white font-bold text-sm"
             >
               <WhatsAppIcon />
               Solicitar Orçamento

@@ -79,14 +79,14 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		fontFamily: {
-  			sans: [
-  				'Inter',
-  				'system-ui',
-  				'-apple-system',
-  				'sans-serif'
-  			]
-  		},
+		fontFamily: {
+			sans: [
+				'Plus Jakarta Sans',
+				'system-ui',
+				'-apple-system',
+				'sans-serif'
+			]
+		},
   		fontSize: {
   			'2xs': [
   				'0.65rem',
